@@ -1,6 +1,6 @@
 <template>
 <div class="topnav">
-    <div class="logo" @click="toggleleMenu">LOGO</div>
+    <div class="logo">LOGO</div>
 
     <ul class="menu">
         <li>菜单1</li>

@@ -6,7 +6,7 @@
             <h2>组件列表</h2>
             <ol>
                 <li>
-                    <router-link to="/doc/swich">Switch 组件</router-link>
+                    <router-link to="/doc/switch">Switch 组件</router-link>
                 </li>
                 <li>
                     <router-link to="/doc/button">Button 组件</router-link>
@@ -19,7 +19,9 @@
                 </li>
             </ol>
         </aside>
-        <main>主内容</main>
+        <main class="main">
+            <router-view />
+        </main>
     </div>
 </div>
 </template>
@@ -31,15 +33,13 @@ import {
     Ref,
     watchEffect
 } from "vue";
+
 export default {
     components: {
         Topnav,
     },
     setup() {
         const menuVisible = inject < Ref < boolean >> ("menuVisible");
-        watchEffect(() => {
-            console.log(`theme set to: ${menuVisible.value}`);
-        });
         return {
             menuVisible,
         };
@@ -52,7 +52,6 @@ aside {
     background: lightblue;
     width: 150px;
     padding: 16px;
-    position: fixed;
 
     >h2 {
         margin-bottom: 4px;
