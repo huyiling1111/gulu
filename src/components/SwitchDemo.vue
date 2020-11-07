@@ -1,6 +1,6 @@
 <template>
 <div>
-    <Switch :value="checked" @update:value="checked = $event" />
+    <Switch v-model:value="bool" />
 </div>
 </template>
 
@@ -15,9 +15,9 @@ export default {
     },
 
     setup() {
-        let checked = ref(false);
+        let bool = ref(false);
         return {
-            checked,
+            bool,
         };
     },
 };
