@@ -55,5 +55,27 @@ $radius: 4px;
     &::-moz-focus-inner {
         border: 0;
     }
+
+    &.gulu-theme-link {
+        border-color: transparent;
+        box-shadow: none;
+        color: lighten($blue, 20%);
+
+        &:hover,
+        &:focus {
+            color: $blue;
+        }
+    }
+
+    &.gulu-theme-text {
+        border-color: transparent;
+        box-shadow: none;
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            background: darken(white, 5%);
+        }
+    }
 }
 </style>
