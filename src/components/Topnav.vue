@@ -1,12 +1,18 @@
 <template>
 <div class="topnav">
-    <div class="logo">LOGO</div>
-
+    <router-link to="/" class="logo">
+        <svg class="icon">
+            <use xlink:href="#icon-yu"></use>
+        </svg>
+    </router-link>
     <ul class="menu">
-        <li>菜单1</li>
-        <li>菜单2</li>
+        <li>
+            <router-link to="/doc">文档</router-link>
+        </li>
     </ul>
-    <span class="toggleAside" @click="toggleleMenu"></span>
+    <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
+        <use xlink:href="#icon-menu"></use>
+    </svg>
 </div>
 </template>
 
@@ -16,22 +22,29 @@ import {
     Ref
 } from "vue";
 export default {
+    props: {
+        toggleMenuButtonVisible: {
+            type: Boolean,
+            default: false,
+        },
+    },
     setup() {
-        const menuVisible = inject < Ref < boolean >> ("menuVisible");
-        const toggleleMenu = () => {
+        const menuVisible = inject < Ref < boolean >> ("menuVisible"); // get
+        const toggleMenu = () => {
             menuVisible.value = !menuVisible.value;
-            console.log(menuVisible.value);
         };
         return {
-            toggleleMenu,
+            toggleMenu,
         };
     },
 };
 </script>
 
 <style lang="scss" scoped>
+$color: #007974;
+
 .topnav {
-    background: pink;
+    color: $color;
     display: flex;
     padding: 16px;
     position: fixed;
@@ -45,6 +58,11 @@ export default {
     >.logo {
         max-width: 6em;
         margin-right: auto;
+
+        >svg {
+            width: 32px;
+            height: 32px;
+        }
     }
 
     >.menu {
@@ -58,14 +76,14 @@ export default {
     }
 
     >.toggleAside {
-        width: 24px;
-        height: 24px;
-        background: red;
+        width: 32px;
+        height: 32px;
         position: absolute;
         left: 16px;
         top: 50%;
         transform: translateY(-50%);
         display: none;
+        background: fade-out(black, 0.9);
     }
 
     @media (max-width: 500px) {
@@ -73,12 +91,12 @@ export default {
             display: none;
         }
 
-        >.toggleAside {
-            display: inline-block;
-        }
-
         >.logo {
             margin: 0 auto;
+        }
+
+        >.toggleAside {
+            display: inline-block;
         }
     }
 }
