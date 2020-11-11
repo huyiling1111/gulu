@@ -10,7 +10,7 @@ export default {
         globals: {
             vue: 'Vue'
         },
-        name: 'gulu',
+        name: 'Gulu',
         file: 'dist/lib/gulu.js',
         format: 'umd',
         plugins: [terser()]
