@@ -10,7 +10,7 @@ gulu UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库。
 
 组件的样式、色彩的搭配参考了一些成熟的 UI 框架（如：Ant Design、Element UI）。
 
-目前代码尚未完工，持续更新中。本组件库仅供学习交流，请勿在生产环境中使用。 欢迎讨论交流，如果你觉得还不错，可以给我 Star。
+目前代码尚未完工，持续更新中。本组件库仅供学习交流，请勿在生产环境中使用。 在打包库的时候遇到一些问题，尚未解决。欢迎讨论交流，如果你觉得还不错，可以给我 Star。
 
 ## 安装
 
@@ -38,7 +38,7 @@ yarn add gulu-ui
 
 ```js
 // 引入组件
-import { Button, Switch, Tabs, Tab, Dialog, openDialog } from "gulu-ui";
+import { Button, Switch, Dialog, openDialog } from "gulu-ui";
 // 引入样式
 import "gulu-ui/dist/lib/gulu-ui.css";
 ```
