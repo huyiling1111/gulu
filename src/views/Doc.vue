@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import Topnav from "../components/Topnav.vue";
+import Topnav from "./Topnav.vue";
 import {
     inject,
     Ref
