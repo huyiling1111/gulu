@@ -5,6 +5,7 @@ import SwitchDemo from "./examples/Switch/SwitchDemo.vue";
 import ButtonDemo from "./examples/Button/ButtonDemo.vue";
 import DialogDemo from "./examples/Dialog/DialogDemo.vue";
 import TabsDemo from "./examples/Tabs/TabsDemo.vue";
+import FormDemo from "./examples/Form/FormDemo.vue";
 
 import { h } from 'vue';
 import Markdown from './examples/Mark/Markdown.vue';
@@ -29,6 +30,7 @@ export const router = createRouter({
         { path: "button", component: ButtonDemo },
         { path: "dialog", component: DialogDemo },
         { path: "tabs", component: TabsDemo },
+        { path: "form", component: FormDemo },
       ],
     },
   ],
@@ -36,3 +38,4 @@ export const router = createRouter({
 router.afterEach(() => {
   console.log("路由切换了");
 });
+let a={value:1, next:{value:7 }}
